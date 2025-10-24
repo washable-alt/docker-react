@@ -8,4 +8,4 @@ before_install:
   - docker build -t washable-alt/docker-react -f Dockerfile.dev .
 
 script: 
-  - docker run -e CI=true -p 3006:3006 washable-alt/docker-react 
+  - docker run -e CI=true washable-alt/docker-react npm run test
