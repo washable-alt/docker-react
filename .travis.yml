@@ -1,0 +1,11 @@
+# docker 
+sudo: required
+# docker cli required
+services:
+  - docker
+# Use dockerfile.dev
+before_install:
+  - docker build -t washable-alt/docker-react -f Dockerfile.dev .
+
+script: 
+  - docker run -e CI=true washable-alt/docker-react npm run test -- --coverage
